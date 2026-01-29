@@ -58,9 +58,24 @@ const jogadores = [
     imagem: require("../assets/images/mastantuonoReal.png"),
   },
   {
-    nome: "Álvaro Arbeloa",
-    posicao: "Tecnico",
-    imagem: require("../assets/images/Arbeloa.png"),
+    nome: "Rodrygo",
+    posicao: "Atacante",
+    imagem: require("../assets/images/RodrygoReal.png"),
+  },
+  {
+    nome: "Antonio Rüdiger",
+    posicao: "Defensor",
+    imagem: require("../assets/images/RudigerReal.png"),
+  },
+  {
+    nome: "Brahim Díaz",
+    posicao: "Meia",
+    imagem: require("../assets/images/BrahimReal.png"),
+  },
+  {
+    nome: "Trent Alexander-Arnold",
+    posicao: "Defensor/Meia",
+    imagem: require("../assets/images/ArnoldReal.png"),
   },
 ];
 

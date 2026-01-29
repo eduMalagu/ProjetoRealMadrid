@@ -1,18 +1,18 @@
 import { router } from "expo-router";
 import {
-    Image,
-    ScrollView,
-    StyleSheet,
-    Text,
-    TouchableOpacity,
-    View,
+  Image,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 const s = StyleSheet.create({
   wrap: {
     flex: 1,
-    backgroundColor: "#b6b6b6",
+    backgroundColor: "#797878",
   },
   body: {
     padding: 20,
@@ -32,7 +32,7 @@ const s = StyleSheet.create({
   },
   price: {
     fontSize: 18,
-    color: "#666",
+    color: "rgb(230, 230, 230)",
   },
   shirt: {
     width: 200,
