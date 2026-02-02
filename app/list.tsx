@@ -1,6 +1,14 @@
-import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
+import { useRouter } from "expo-router";
+import {
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-
+import Item from "../components/item";
+// Jogadores
 const jogadores = [
   {
     nome: "Courtois",
@@ -78,7 +86,7 @@ const jogadores = [
     imagem: require("../assets/images/ArnoldReal.png"),
   },
 ];
-
+// Estilo da pagina
 const s = StyleSheet.create({
   container: {
     flex: 1,
@@ -102,49 +110,22 @@ const s = StyleSheet.create({
   listContainer: {
     padding: 15,
   },
-  jogadorCard: {
-    backgroundColor: "#f8f8f8",
-    borderRadius: 12,
-    marginBottom: 15,
-    overflow: "hidden",
-    flexDirection: "row",
-    elevation: 3,
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 3,
+  footerBtn: {
+    marginTop: 12,
+    backgroundColor: "#002147",
+    paddingHorizontal: 14,
+    paddingVertical: 10,
+    borderRadius: 8,
+    alignSelf: "center",
   },
-  imgWrapper: {
-    width: 100,
-    height: 120,
-    backgroundColor: "#e0e0e0",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  jogadorImg: {
-    width: "100%",
-    height: "100%",
-    resizeMode: "cover",
-  },
-  infoWrapper: {
-    flex: 1,
-    padding: 15,
-    justifyContent: "center",
-  },
-  jogadorNome: {
-    fontSize: 18,
-    fontWeight: "bold",
-    color: "#002147",
-    marginBottom: 8,
-  },
-  posicao: {
-    fontSize: 14,
-    color: "#666",
-    fontWeight: "500",
+  footerBtnText: {
+    color: "#fff",
+    fontWeight: "600",
   },
 });
-
+// Campo da pagina
 export default function ListPage() {
+  const router = useRouter();
   return (
     <SafeAreaView style={s.container}>
       <View style={s.header}>
@@ -153,16 +134,15 @@ export default function ListPage() {
       </View>
       <ScrollView style={s.listContainer}>
         {jogadores.map((jogador, index) => (
-          <View key={index} style={s.jogadorCard}>
-            <View style={s.imgWrapper}>
-              <Image source={jogador.imagem} style={s.jogadorImg} />
-            </View>
-            <View style={s.infoWrapper}>
-              <Text style={s.jogadorNome}>{jogador.nome}</Text>
-              <Text style={s.posicao}>{jogador.posicao}</Text>
-            </View>
-          </View>
+          <Item key={index} jogador={jogador} />
         ))}
+
+        <TouchableOpacity
+          style={s.footerBtn}
+          onPress={() => router.push("/list2")}
+        >
+          <Text style={s.footerBtnText}>Ver reservas</Text>
+        </TouchableOpacity>
       </ScrollView>
     </SafeAreaView>
   );

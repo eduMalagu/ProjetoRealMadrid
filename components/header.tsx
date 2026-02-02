@@ -1,21 +1,20 @@
-import { ImageSourcePropType, StyleSheet, View } from "react-native"
+import { Image, ImageSourcePropType, StyleSheet, View } from "react-native";
 
-
-export const Header = (image: ImageSourcePropType) => {
-    return (
-        <View style={s.wrap}>
-            <Image/>
-        </View>
-    )
-}
+export const Header = ({ image }: { image: ImageSourcePropType }) => {
+  return (
+    <View style={s.wrap}>
+      <Image style={s.img} source={image} />
+    </View>
+  );
+};
 
 const s = StyleSheet.create({
-wrap {
-    alingnItems: 'center',
-    justifyContent: 'center',
-},
-img:{
-    width: 100,
-    height: 145,
-}
-})
+  wrap: {
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  img: {
+    width: "100%",
+    height: 250,
+  },
+});

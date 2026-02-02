@@ -8,6 +8,7 @@ export default function RootLayout() {
     <Stack>
       <Stack.Screen name="index" options={opts} />
       <Stack.Screen name="list" options={opts} />
+      <Stack.Screen name="list2" options={opts} />
     </Stack>
   );
 }

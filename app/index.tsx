@@ -1,4 +1,4 @@
-import { router } from "expo-router";
+import { useRouter } from "expo-router";
 import {
   Image,
   ScrollView,
@@ -8,7 +8,6 @@ import {
   View,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-
 const s = StyleSheet.create({
   wrap: {
     flex: 1,
@@ -55,6 +54,8 @@ const s = StyleSheet.create({
 });
 
 export default function HomePage() {
+  const router = useRouter();
+
   const visit = () => {
     router.push("/list");
   };
